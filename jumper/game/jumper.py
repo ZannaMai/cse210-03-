@@ -1,0 +1,2 @@
+class Jumper:
+    pass
