@@ -8,6 +8,7 @@ class Word:
         Args: 
             self(Word): a new instance of Word
         """
+        #self._words is encapsulated so that it is protected within this method
         self._words = []
         self.word = ''
 
