@@ -1,5 +1,4 @@
 import random
-
 class Word:
 
     def __init__(self):
@@ -14,5 +13,17 @@ class Word:
 
 
     def new_word(self):
-        self.word = self.words.random
+        self.word = random.choice(self._words)
 
+
+    def hide_word(self):
+        letters = Word.new_word(self)
+        for i in range(len(letters)):
+            letters[i] = "_"
+        letters = ', '.join(letters)
+        letters = ''.join(str(letters).split(','))
+        return letters
+
+
+    def check_guess():
+        pass 

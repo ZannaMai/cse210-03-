@@ -12,5 +12,5 @@ If the player has no more parachute the game is over.
 Authors of the file:
 Zanna Johnson (josafennaanna@gmail.com)
 Loran Mills   (lsmills24@byui.edu)
-Tyson Mergel
+Tyson Mergel   (nip20001@byui.edu)
 Juan David Engelbrecht 
