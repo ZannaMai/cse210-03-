@@ -1,3 +1,6 @@
 class Jumper:
+<<<<<<< HEAD
     pass
-hi 
+=======
+    pass
+>>>>>>> parent of 1d271aa (Update jumper.py)
