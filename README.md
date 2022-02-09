@@ -9,6 +9,16 @@ If the guess is incorrect, a line is cut on the player's parachute.
 If the puzzle is solved the game is over.
 If the player has no more parachute the game is over.
 
+<<<Layout>>>
+# Jumper
+    # game
+        >director
+        >jumper
+        >parachute
+        >word
+    >__main__
+    README
+
 Authors of the file:
 Zanna Johnson (josafennaanna@gmail.com)
 Loran Mills   (lsmills24@byui.edu)
