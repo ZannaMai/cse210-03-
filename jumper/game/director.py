@@ -97,11 +97,10 @@ class Director:
             else:
                 guessed = True
                 word_completion = word
-            else:
                 print("Not a valid guess.")
-            print((tries))
-            print(word_completion)
-            print("\n")
+                print((tries))
+                print(word_completion)
+                print("\n")
         if self._is_guessing:
             print("Congrats, you guessed the word! You win!")
         else:
