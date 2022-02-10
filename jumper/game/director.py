@@ -53,7 +53,7 @@ class Director:
     def _do_outputs(self):
         self._is_guessing = False
 
-    def play(word):
+    def play(self, word):
         self._parachute = Parachute()
         #play the game
         word_completion = "_" * len(word)
