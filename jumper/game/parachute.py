@@ -7,8 +7,8 @@ class Parachute:
     def __init__(self):
         """Constructs the parachute"""
 
-        self._parachutes = 0
-        self._parachute = 0
+        self.parachutes = 0
+        self.parachute = 0
 
 
     def show_parachute(self, tries):
