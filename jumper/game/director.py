@@ -20,7 +20,7 @@ class Director:
         """
         self._parachute = Parachute()
         self._is_guessing = True
-        self._word = Word()
+        self._words = Word()
         self._jumper = Jumper()
         self._play = True
         
@@ -34,13 +34,13 @@ class Director:
         """
         while self._is_guessing:
             self._get_inputs()
-            self._do_updates()
+            # self._do_updates()
             self._do_outputs()
 
     def _get_inputs(self):
         tries = 5
-        self._word.new_word()
-        hidden_word = self._word.hide_word()
+        self._words.new_word()
+        hidden_word = self._words.hide_word()
         print(hidden_word)
         self._parachute.show_parachute(tries=tries)
         tries -= 1 
@@ -55,6 +55,8 @@ class Director:
 
     def play(self, word):
         self._parachute = Parachute()
+        self._words = Word()
+        self._is_guessing = False
         #play the game
         word_completion = "_" * len(word)
         guessed = False
@@ -89,19 +91,19 @@ class Director:
                 if guess in guessed_words:
                     print("You already guessed the word", guess)
             elif guess != word:
-                    print(guess, "is not the word.")
-                    tries -= 1
-                    guessed_words.append(guess)
+                print(guess, "is not the word.")
+                tries -= 1
+                guessed_words.append(guess)
             else:
-                    guessed = True
-                    word_completion = word
+                guessed = True
+                word_completion = word
             else:
                 print("Not a valid guess.")
-        print(show_parachute(tries))
+            print((tries))
             print(word_completion)
             print("\n")
-        if guessed:
+        if self._is_guessing:
             print("Congrats, you guessed the word! You win!")
         else:
-            print("Sorry, you ran out of tries. The word was " + word + ". Maybe next time!")
+            print("Sorry, you ran out of tries. The word was " + self._words + ". Maybe next time!")
 ​ 
