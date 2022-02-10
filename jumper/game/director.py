@@ -105,4 +105,4 @@ class Director:
             print("Congrats, you guessed the word! You win!")
         else:
             print("Sorry, you ran out of tries. The word was " + self._words + ". Maybe next time!")
-​ 
+
