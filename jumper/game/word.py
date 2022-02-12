@@ -1,9 +1,10 @@
 import random
+
+
 class Word:
 
     def __init__(self):
         """Constructs a new Word 
-
         Args: 
             self(Word): a new instance of Word
         """
@@ -448,21 +449,17 @@ class Word:
                        'hybrid',
                        'buffet',
                        'lively']
-        self.word = ''
-
+        self._random_word = ''
 
     def new_word(self):
-        self.word = random.choice(self._words)
-
+        self._word = random.choice(self._words)
+        # This can be commented out later after we figure out how to take inputs
+        return self._word
 
     def hide_word(self):
-        letters = Word.new_word(self)
-        for i in range(len(letters)):
-            letters[i] = "_"
+        letters = []
+        # for i in range(len(self._word)):
+        #     letters.append('_')
         letters = ', '.join(letters)
         letters = ''.join(str(letters).split(','))
         return letters
-
-
-    def check_guess():
-        pass 

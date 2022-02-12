@@ -13,4 +13,4 @@ Authors of the file:
 Zanna Johnson (josafennaanna@gmail.com)
 Loran Mills   (lsmills24@byui.edu)
 Tyson Mergel   (nip20001@byui.edu)
-Juan David Engelbrecht 
+Juan David Engelbrecht (juandavid_engelbrecht96@hotmail.com)
