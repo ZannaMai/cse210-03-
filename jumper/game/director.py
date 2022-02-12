@@ -22,6 +22,8 @@ class Director:
         self._word = Word()
         self._jumper = Jumper()
         self.guessed_word = ""
+        self.tries = 5
+        self.hidden_word = []
         
 
 
@@ -31,31 +33,35 @@ class Director:
         Args:
             self (Director): an instance of Director.
         """
+        self.guessed_word = self._word.new_word()
+        self.hidden_word = self._word.letters
+        self._word.print_blanks()
+        self._parachute.show_parachute(self.tries)
         while self._is_guessing:
             guess = self._get_inputs()
             self._do_updates(guess)
             self._do_outputs()
 
     def _get_inputs(self):
-        tries = 5
-        self.guessed_word = self._word.new_word()
-        hidden_word = self._word.hide_word()
-        print(hidden_word)
-        self._parachute.show_parachute(tries=tries)
-        tries -= 1 
         guess_letter = input("Guess a letter [a-z]: ")
         return guess_letter
 
     def _do_updates(self, guess):
+        found_letter = False
         chosen_word = []
         for letter in self.guessed_word:
             chosen_word.append(letter)
         for i in range(0, len(chosen_word)):
             letter = chosen_word[i]
             if guess == letter:
-                chosen_word[i] = letter
-
+                self._word.letters[i] = letter
+                found_letter = True
+        if found_letter == False:
+            self.tries -= 1
+        self._word.print_blanks()
+        self._parachute.show_parachute(self.tries)
             
 
     def _do_outputs(self):
-        self._is_guessing = False
+        if self._is_guessing == False:
+            pass
