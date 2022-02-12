@@ -1,5 +1,4 @@
 
-
 class Parachute:
     """Where we create and change the tiers of the parachute
     
@@ -7,8 +6,8 @@ class Parachute:
     def __init__(self):
         """Constructs the parachute"""
 
-        self.parachutes = 0
-        self.parachute = 0
+        self._parachutes = 0
+        self._parachute = 0
 
 
     def show_parachute(self, tries):
@@ -25,7 +24,6 @@ class Parachute:
              O
             /|\ 
             / \ 
-
        ^^^^^^^^^^^^^
             """,
             # Medium strings (2 attempts left)
@@ -35,7 +33,6 @@ class Parachute:
              O
             /|\ 
             / \ 
-
        ^^^^^^^^^^^^^
             """,
             # Long strings (3 attempts left)
@@ -46,7 +43,6 @@ class Parachute:
              O
             /|\ 
             / \ 
-
        ^^^^^^^^^^^^^
             """,
             # middle of chute (4 attempts left)
@@ -58,7 +54,6 @@ class Parachute:
              O
             /|\ 
             / \ 
-
        ^^^^^^^^^^^^^
             """,
             # Initial state (5 attempts)
@@ -71,7 +66,6 @@ class Parachute:
              O
             /|\ 
             / \ 
-
        ^^^^^^^^^^^^^
             """,
             ]
