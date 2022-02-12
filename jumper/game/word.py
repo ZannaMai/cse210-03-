@@ -448,20 +448,25 @@ class Word:
                        'hybrid',
                        'buffet',
                        'lively']
-        self._random_word = ''
+        self._word = ''
+        self.letters = []
  
 
     def new_word(self):
         self._word = random.choice(self._words)
+        print(self._word)
+        self.hide_word()
         return self._word    # This can be commented out later after we figure out how to take inputs
         
 
     def hide_word(self):
-        letters = []
-        # for i in range(len(self._word)):
-        #     letters.append('_')
-        letters = ', '.join(letters)
-        letters = ''.join(str(letters).split(','))
-        return letters
+        self.letters = []
+        for i in range(len(self._word)):
+            self.letters.append('_')
+        return self.letters
 
-
+    def print_blanks(self):
+        self.blanks = " ".join(self.letters)
+        print(self.blanks)
+        print("")
+        print("")
