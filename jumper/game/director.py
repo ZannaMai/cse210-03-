@@ -47,21 +47,38 @@ class Director:
         return guess_letter
 
     def _do_updates(self, guess):
+        wrong_letter = []
         found_letter = False
         chosen_word = []
+
         for letter in self.guessed_word:
             chosen_word.append(letter)
+
         for i in range(0, len(chosen_word)):
             letter = chosen_word[i]
             if guess == letter:
                 self._word.letters[i] = letter
                 found_letter = True
+                print("Yay! You guessed a correct letter :)")
+
         if found_letter == False:
             self.tries -= 1
+            print("Sorry! This letter was not correct. Please try again :)")
+            wrong_letter.append(guess)
+            print(wrong_letter)
+
         self._word.print_blanks()
         self._parachute.show_parachute(self.tries)
             
 
     def _do_outputs(self):
-        if self._is_guessing == False:
-            pass
+        # when all the parachute strings ae gone..
+        # when all the blanks are filled...
+        if self.tries == 0:
+            self._is_guessing = False
+            print("Sorry you lost")
+        
+        # see if there any underscores left in the list 
+        if "_" not in self._word.letters:
+            self._is_guessing = False
+            print("Congrats! You win!")
