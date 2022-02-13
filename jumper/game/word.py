@@ -454,7 +454,7 @@ class Word:
 
     def new_word(self):
         self._word = random.choice(self._words)
-        print(self._word)
+        # print(self._word)
         self.hide_word()
         return self._word    # This can be commented out later after we figure out how to take inputs
         
